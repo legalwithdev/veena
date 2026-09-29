@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>aneev — Smart Wellness for Every Indian</title>
-<meta name="description" content="aneev — verified wellness answers for students and healthcare workers: AI agent with sourced answers (WHO/CDC/Govt of India), demo wellness shop aur verified wellness guides.">
+<meta name="description" content="aneev — verified wellness answers for students and healthcare workers: AI agent with sourced answers (WHO/CDC/Govt of India), demo wellness shop and verified wellness guides.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme:light)">
 <meta name="theme-color" content="#170d0d" media="(prefers-color-scheme:dark)">
@@ -408,6 +408,24 @@
   @media(max-width:920px){.partner-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:600px){.partner-grid{grid-template-columns:1fr}}
 
+  /* ---------- Medical shops directory ---------- */
+  .shops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .shop-entry{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .25s;display:flex;flex-direction:column}
+  .shop-entry:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-strong)}
+  .sh-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+  .sh-name{font-weight:700;font-size:.98rem}
+  .sh-area{font-size:.78rem;color:var(--text-dim)}
+  .sh-badge{margin-left:auto;font-family:var(--font-mono);font-size:.58rem;font-weight:600;color:var(--amber);background:var(--amber-dim);border:1px solid rgba(180,83,9,.25);padding:3px 8px;border-radius:99px;white-space:nowrap;flex:none}
+  .sh-meta{font-size:.8rem;color:var(--text-dim);margin-bottom:10px}
+  .sh-services{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .sh-services span{font-family:var(--font-mono);font-size:.62rem;color:var(--sage);background:var(--sage-dim);border:1px solid rgba(22,163,74,.25);padding:3px 9px;border-radius:99px}
+  .sh-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+  .sh-phone{font-family:var(--font-mono);font-weight:600;font-size:.85rem}
+  .sh-note{font-size:.68rem;color:var(--text-dim);margin-top:10px;border-top:1px dashed var(--border);padding-top:8px}
+  .sh-cta{background:var(--teal-dim);border:1px dashed rgba(220,38,38,.3);border-radius:14px;padding:18px 22px;margin-top:26px;text-align:center;font-size:.88rem}
+  @media(max-width:920px){.shops-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.shops-grid{grid-template-columns:1fr}}
+
   /* ---------- Footer ---------- */
   footer{background:#450a0a;color:#cbd5e1;padding:56px 0 32px;margin-top:0}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
@@ -493,11 +511,6 @@
     </div>
     <nav class="nav-links" id="navMenu">
       <a href="#hero" class="nav-link active">Home</a>
-      <a href="#problems" class="nav-link">Problems</a>
-      <a href="#solutions" class="nav-link">Solutions</a>
-      <a href="#" class="nav-link" onclick="openChat();return false">AI Assistant</a>
-      <a href="#shop" class="nav-link">Shop</a>
-      <a href="#partners" class="nav-link">Partners</a>
     </nav>
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -519,7 +532,11 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           Chat with AI Assistant
         </button>
-        <a class="btn-ghost btn" href="#shop">Browse Wellness Shop</a>
+        <a class="btn-ghost btn" href="#shop">🛍️ Browse Wellness Shop</a>
+        <a class="btn-ghost btn" href="#shops">🏪 Medical Shops Near You</a>
+        <a class="btn-ghost btn" href="#solutions">✨ Our Solutions</a>
+        <a class="btn-ghost btn" href="#partners">🤝 Partner Stores</a>
+        <a class="btn-ghost btn" href="#problems">❓ Why aneev?</a>
       </div>
       <div class="hero-note">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -551,7 +568,7 @@
   <div class="wrap">
     <div class="sec-label">OUR SOLUTIONS</div>
     <h2>One platform, every layer of everyday wellness.</h2>
-    <p class="sec-sub">Our services — kuch abhi live hain, kuch coming soon (har card ka badge dekho). Sab ka goal: "something feels off" se "sorted" tak, bina aneev chhode.</p>
+    <p class="sec-sub">Our services — some are live now, some are coming soon (see each card's badge). The goal: from "something feels off" to "sorted", without leaving aneev.</p>
     <div class="sol-grid">
       <div class="sol reveal">
         <div class="sol-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="0.5" width="16" height="19.5" rx="2"/><path d="M2 7h2M2 12h2M2 17h2M20 7h2M20 12h2M20 17h2"/><circle cx="12" cy="11" r="3"/></svg></div>
@@ -606,7 +623,7 @@
   <div class="wrap">
     <div class="sec-label">WELLNESS SHOP · DEMO</div>
     <h2>Demo products, honest preview.</h2>
-    <p class="sec-sub">Ye ek demo shop hai — browsing aur cart try karo, koi asli payment ya order nahi hota. Real store coming soon.</p>
+    <p class="sec-sub">This is a demo shop — browse and try the cart, no real payment or order is processed. The real store is coming soon.</p>
     <div class="shop-toolbar">
       <div class="filters" id="filters">
         <span class="filter active" data-cat="all">All</span>
@@ -625,11 +642,11 @@
   <div class="wrap ai-grid">
     <div>
       <div class="sec-label">ANEEV — VERIFIED Q&A</div>
-      <h2>Verified wellness answers — students, healthcare workers, sabke liye.</h2>
-      <p class="sec-sub" style="margin-bottom:28px">Har answer curated knowledge base se aata hai — WHO, CDC aur Govt of India sources par based — source attribution ke saath. Koi guesswork nahi.</p>
+      <h2>Verified wellness answers — for students, healthcare workers, everyone.</h2>
+      <p class="sec-sub" style="margin-bottom:28px">Every answer comes from a curated knowledge base — based on WHO, CDC and Govt of India sources — with source attribution. No guesswork.</p>
       <div class="ai-feat reveal">
         <div class="k">01</div>
-        <div><h4>Verified, sourced answers</h4><p>24 topics — har jawab ke saath uska source (WHO guidelines, MoHFW helplines, national rules). Bingе-search jaisa anxiety nahi.</p></div>
+        <div><h4>Verified, sourced answers</h4><p>24 topics — every answer comes with its source (WHO guidelines, MoHFW helplines, national rules). No search-engine anxiety.</p></div>
       </div>
       <div class="ai-feat reveal">
         <div class="k">02</div>
@@ -641,7 +658,7 @@
       </div>
       <div class="ai-feat reveal">
         <div class="k">04</div>
-        <div><h4>Emergency red-flags</h4><p>Emergency phrases pe turant 112/104 helpline numbers surface hote hain — generic advice nahi.</p></div>
+        <div><h4>Emergency red-flags</h4><p>Emergency phrases instantly surface 112/104 helpline numbers — not generic advice.</p></div>
       </div>
       <div style="margin-top:28px">
         <button class="btn btn-primary" onclick="openChat()">Ask aneev AI</button>
@@ -658,13 +675,13 @@
         </div>
       </div>
       <div class="hc-chips" style="margin:0">
-        <span class="hc-chip" onclick="openChat('Exam stress kaise manage karein?')">Exam stress</span>
-        <span class="hc-chip" onclick="openChat('Needle-stick injury pe kya karein?')">Needle-stick injury</span>
+        <span class="hc-chip" onclick="openChat('How do I manage exam stress?')">Exam stress</span>
+        <span class="hc-chip" onclick="openChat('What to do for a needle-stick injury?')">Needle-stick injury</span>
         <span class="hc-chip" onclick="openChat('Hand hygiene — WHO 5 moments')">Hand hygiene</span>
-        <span class="hc-chip" onclick="openChat('Burnout ke signs kya hain?')">Burnout</span>
-        <span class="hc-chip" onclick="openChat('Kitni neend chahiye?')">Sleep</span>
-        <span class="hc-chip" onclick="openChat('Antibiotics kyun complete karne hote hain?')">Antibiotics</span>
-        <span class="hc-chip" onclick="openChat('Mental health help kab lena chahiye?')">Mental health</span>
+        <span class="hc-chip" onclick="openChat('What are the signs of burnout?')">Burnout</span>
+        <span class="hc-chip" onclick="openChat('How much sleep do I need?')">Sleep</span>
+        <span class="hc-chip" onclick="openChat('Why should I complete antibiotic courses?')">Antibiotics</span>
+        <span class="hc-chip" onclick="openChat('When should I seek mental health help?')">Mental health</span>
         <span class="hc-chip" onclick="openChat('Night shift health')">Night shift</span>
       </div>
       <p style="font-size:.78rem;color:var(--text-dim);margin-top:18px;border-top:1px dashed var(--border);padding-top:14px">
@@ -678,39 +695,121 @@
 <section id="partners" class="view">
   <div class="wrap">
     <div class="sec-label">PARTNER STORES</div>
-    <h2>Har bharosemand healthcare store, ek jagah.</h2>
-    <p class="sec-sub">India ke top healthcare platforms — dawai, devices, lab tests aur consultations. Seedhe unke official store pe jao. (Ye abhi partner links hain — affiliate tracking judega jab account banega.)</p>
+    <h2>Every trusted healthcare store, in one place.</h2>
+    <p class="sec-sub">India's top healthcare platforms — medicines, devices, lab tests and consultations. Go straight to their official stores. (These are partner links for now — affiliate tracking will be added once accounts are created.)</p>
     <div class="partner-grid">
       <div class="partner reveal">
         <div class="p-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Tata 1mg</div>
-        <p>Medicines, lab tests aur online consultations — India ka trusted e-pharmacy (Tata group).</p>
+        <p>Medicines, lab tests and online consultations — India's trusted e-pharmacy (Tata group).</p>
         <a class="btn btn-ghost" href="https://www.1mg.com" target="_blank" rel="noopener">Visit store</a>
       </div>
       <div class="partner reveal">
         <div class="p-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>PharmEasy</div>
-        <p>Medicines, OTC products aur gharon tak diagnostic tests — India ki badi pharmacy platform.</p>
+        <p>Medicines, OTC products and at-home diagnostic tests — one of India's largest pharmacy platforms.</p>
         <a class="btn btn-ghost" href="https://pharmeasy.in" target="_blank" rel="noopener">Visit store</a>
       </div>
       <div class="partner reveal">
         <div class="p-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Netmeds</div>
-        <p>Prescription medicines aur healthcare products (Reliance group ki pharmacy).</p>
+        <p>Prescription medicines and healthcare products (Reliance group pharmacy).</p>
         <a class="btn btn-ghost" href="https://www.netmeds.com" target="_blank" rel="noopener">Visit store</a>
       </div>
       <div class="partner reveal">
         <div class="p-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Apollo 24|7</div>
-        <p>Online pharmacy, doctor consultations aur lab tests — Apollo Hospitals ka digital platform.</p>
+        <p>Online pharmacy, doctor consultations and lab tests — Apollo Hospitals' digital platform.</p>
         <a class="btn btn-ghost" href="https://www.apollo247.com" target="_blank" rel="noopener">Visit store</a>
       </div>
       <div class="partner reveal">
         <div class="p-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Amazon Health & Wellness</div>
-        <p>Health devices, wellness aur personal care products — bade choice aur bharosa dono.</p>
+        <p>Health devices, wellness and personal care products — wide choice and trust.</p>
         <a class="btn btn-ghost" href="https://www.amazon.in" target="_blank" rel="noopener">Visit store</a>
       </div>
       <div class="partner reveal">
         <div class="p-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Practo</div>
-        <p>Doctor appointments, online consultations aur hospital info — services ke liye.</p>
+        <p>Doctor appointments, online consultations and hospital info.</p>
         <a class="btn btn-ghost" href="https://www.practo.com" target="_blank" rel="noopener">Visit store</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEDICAL SHOPS DIRECTORY ============ -->
+<section id="shops" class="problems view">
+  <div class="wrap">
+    <div class="sec-label">MEDICAL SHOPS DIRECTORY &middot; SAMPLE DATA</div>
+    <h2>Medical shops in your area, all in one place.</h2>
+    <p class="sec-sub">These are <b>example listings</b> for demo purposes. Real shop data will arrive with owner consent, each with a "verified" date. Always call to confirm before visiting.</p>
+    <div class="shops-grid">
+
+      <div class="shop-entry">
+        <div class="sh-head">
+          <div><div class="sh-name">Shri Ram Medical Store</div><div class="sh-area">Rajendra Nagar</div></div>
+          <span class="sh-badge">SAMPLE</span>
+        </div>
+        <div class="sh-meta">🕒 8:00 AM – 10:00 PM &middot; Mon–Sun</div>
+        <div class="sh-services"><span>Home delivery</span><span>Card accepted</span></div>
+        <div class="sh-foot"><span class="sh-phone">📞 98000 00001</span><a class="btn btn-ghost" href="tel:+919800000001">Call</a></div>
+        <div class="sh-note">Example listing — not a real shop</div>
+      </div>
+
+      <div class="shop-entry">
+        <div class="sh-head">
+          <div><div class="sh-name">City Care Pharmacy</div><div class="sh-area">Near Civil Hospital</div></div>
+          <span class="sh-badge">SAMPLE</span>
+        </div>
+        <div class="sh-meta">🕒 Open 24 hours</div>
+        <div class="sh-services"><span>24x7</span><span>ICU medicines</span><span>Refrigerated meds</span></div>
+        <div class="sh-foot"><span class="sh-phone">📞 98000 00002</span><a class="btn btn-ghost" href="tel:+919800000002">Call</a></div>
+        <div class="sh-note">Example listing — not a real shop</div>
+      </div>
+
+      <div class="shop-entry">
+        <div class="sh-head">
+          <div><div class="sh-name">Wellness Meds</div><div class="sh-area">MG Road</div></div>
+          <span class="sh-badge">SAMPLE</span>
+        </div>
+        <div class="sh-meta">🕒 9:00 AM – 9:00 PM &middot; Mon–Sat</div>
+        <div class="sh-services"><span>Home delivery</span><span>Online ordering</span></div>
+        <div class="sh-foot"><span class="sh-phone">📞 98000 00003</span><a class="btn btn-ghost" href="tel:+919800000003">Call</a></div>
+        <div class="sh-note">Example listing — not a real shop</div>
+      </div>
+
+      <div class="shop-entry">
+        <div class="sh-head">
+          <div><div class="sh-name">Lifeline Chemists</div><div class="sh-area">Station Road</div></div>
+          <span class="sh-badge">SAMPLE</span>
+        </div>
+        <div class="sh-meta">🕒 7:30 AM – 10:30 PM &middot; Mon–Sun</div>
+        <div class="sh-services"><span>Senior citizen discount</span><span>Wheelchair access</span></div>
+        <div class="sh-foot"><span class="sh-phone">📞 98000 00004</span><a class="btn btn-ghost" href="tel:+919800000004">Call</a></div>
+        <div class="sh-note">Example listing — not a real shop</div>
+      </div>
+
+      <div class="shop-entry">
+        <div class="sh-head">
+          <div><div class="sh-name">Green Cross Pharmacy</div><div class="sh-area">Sector 4 Market</div></div>
+          <span class="sh-badge">SAMPLE</span>
+        </div>
+        <div class="sh-meta">🕒 8:00 AM – 9:00 PM &middot; Mon–Sun</div>
+        <div class="sh-services"><span>Ayurvedic range</span><span>Generic substitutes</span></div>
+        <div class="sh-foot"><span class="sh-phone">📞 98000 00005</span><a class="btn btn-ghost" href="tel:+919800000005">Call</a></div>
+        <div class="sh-note">Example listing — not a real shop</div>
+      </div>
+
+      <div class="shop-entry">
+        <div class="sh-head">
+          <div><div class="sh-name">New Bharat Medicals</div><div class="sh-area">Main Bazaar</div></div>
+          <span class="sh-badge">SAMPLE</span>
+        </div>
+        <div class="sh-meta">🕒 8:30 AM – 11:00 PM &middot; Mon–Sun</div>
+        <div class="sh-services"><span>Wholesale</span><span>Surgical items</span></div>
+        <div class="sh-foot"><span class="sh-phone">📞 98000 00006</span><a class="btn btn-ghost" href="tel:+919800000006">Call</a></div>
+        <div class="sh-note">Example listing — not a real shop</div>
+      </div>
+
+    </div>
+    <div class="sh-cta">
+      🏪 <b>Medical shop owner?</b> Get your listing <b>free</b> — reach customers in your area on aneev. No charge.<br>
+      <small style="color:var(--text-dim)">(Real listings coming soon — this is demo data)</small>
     </div>
   </div>
 </section>
@@ -732,6 +831,7 @@
           <li><a href="#assistant">AI Assistant</a></li>
           <li><a href="#shop">Wellness Shop</a></li>
           <li><a href="#partners">Partner Stores</a></li>
+          <li><a href="#shops">Medical Shops</a></li>
           <li><a href="#problems">Why aneev</a></li>
           <li><a href="blog-exam-stress.html">Student Guide: Exam Stress</a></li>
           <li><a href="blog-needle-stick.html">HCW Guide: Needle-Stick Injury</a></li>
@@ -973,7 +1073,7 @@ function placeOrder(){
     <div class="success-box">
       <div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>Order placed!</h3>
-      <p>Dhanyavaad, ${name.split(' ')[0]}! Your order is confirmed${payMethod==='cod'?' — pay on delivery':' via UPI (demo)'}.</p>
+      <p>Thank you, ${name.split(' ')[0]}! Your order is confirmed${payMethod==='cod'?' — pay on delivery':' via UPI (demo)'}.</p>
       <div class="oid">${oid}</div>
       <p>Estimated delivery: 2&ndash;4 business days.</p>
       <p style="font-size:.76rem;margin-top:10px">This is a demo store — no payment was collected and no real order was placed.</p>
@@ -995,86 +1095,86 @@ function showToast(msg){
    Curated from WHO / CDC / Govt of India sources. Education only.
 ================================================================ */
 const HELLO="Namaste! I'm aneev AI.";
-const CHIPS_DEFAULT=['Exam stress kaise manage karein?','Needle-stick injury pe kya karein?','Hand hygiene — WHO 5 moments','Burnout ke signs kya hain?','Kitni neend chahiye?','Antibiotics kyun complete karne hote hain?'];
+const CHIPS_DEFAULT=['How do I manage exam stress?','What to do for a needle-stick injury?','Hand hygiene — WHO 5 moments','What are the signs of burnout?','How much sleep do I need?','Why should I complete antibiotic courses?'];
 
 /* ---------------- VERIFIED KNOWLEDGE BASE ---------------- */
 const KB=[
  // ============ STUDENTS ============
  {t:'Exam stress & anxiety', who:'students', tags:['exam','stress','anxiety','padhai','test','tension','panic','nervous','pressure','board'],
-  a:"<b>Exam stress</b> — evidence-based ways to manage:<br><br>• <b>Breaks lo:</b> 25-50 min study + 5-10 min break ( Pomodoro method) — memory consolidate hoti hai<br>• <b>Sleep 7-9 hours:</b> all-nighters recall ko kam karte hain, badhate nahi<br>• <b>Move:</b> 20-30 min walk/exercise cortisol (stress hormone) girata hai<br>• <b>Caffeine limit:</b> raat ko energy drinks/coffee avoid — anxiety worsen hoti hai<br>• <b>Practice exams:</b> time-bound mock tests real exam anxiety ko kaafi kam karte hain (research-backed)<br><br><b>Help lena normal hai:</b> agar 2+ hafte low mood, hopelessness, ya panic attacks — free 24/7 <b>Tele-MANAS: 14416</b> (Govt of India).",
+  a:"<b>Exam stress</b> — evidence-based ways to manage:<br><br>• <b>Take breaks:</b> 25-50 min study + 5-10 min break (Pomodoro method) — memory consolidates<br>• <b>Sleep 7-9 hours:</b> all-nighters reduce recall, they don't improve it<br>• <b>Move:</b> 20-30 min walk/exercise lowers cortisol (the stress hormone)<br>• <b>Limit caffeine:</b> avoid energy drinks/coffee at night — they worsen anxiety<br>• <b>Practice exams:</b> time-bound mock tests significantly reduce real exam anxiety (research-backed)<br><br><b>Seeking help is normal:</b> if 2+ weeks of low mood, hopelessness, or panic attacks — free 24/7 <b>Tele-MANAS: 14416</b> (Govt of India).",
   src:"WHO stress management; Tele-MANAS (MoHFW, Govt of India)"},
  {t:'Sleep — how much students need', who:'students', tags:['sleep','neend','insomnia','nind','tired','sona','night'],
-  a:"<b>Sleep facts (young adults):</b><br><br>• Age 18-25: <b>7-9 hours</b> nightly recommended<br>• Sleep hygiene: fixed sleep/wake time (weekends pe bhi), bedroom dark-cool-quiet, screens 1 hour pehle band<br>• Caffeine ka half-life ~5-6 hours — dopahar 4 baje ke baad avoid<br>• Bina neend ke: attention 30% girta hai, memory consolidation ruk jaati hai<br><br><b>Doctor se milo agar:</b> 3+ hafte se sone mein dikkat, ya din bhar neend aana.",
+  a:"<b>Sleep facts (young adults):</b><br><br>• Age 18-25: <b>7-9 hours</b> nightly recommended<br>• Sleep hygiene: fixed sleep/wake times (even on weekends), dark-cool-quiet bedroom, screens off 1 hour before bed<br>• Caffeine's half-life is ~5-6 hours — avoid it after 4 PM<br>• Without sleep: attention drops ~30%, memory consolidation halts<br><br><b>See a doctor if:</b> trouble sleeping for 3+ weeks, or sleepiness all day.",
   src:"US CDC Sleep; National Sleep Foundation"},
  {t:'Healthy diet on a student budget', who:'students', tags:['diet','khana','food','nutrition','protein','bimaar','khana','Mess','anna','vitamin deficiency'],
-  a:"<b>Budget diet jo kaam karti hai:</b><br><br>• <b>Protein roz:</b> dal, chana, rajma, eggs, soya, dahi — sab saste hain<br>• <b>Thali rule:</b> half plate sabzi + fruit, quarter roti/rice, quarter dal/protein<br>• <b>Iron</b> (esp. women): palak, chana, dates — vitamin C (nimbu) ke saath lo, absorption badhta hai<br>• <b>Breakfast skip mat karo</b> — concentration girta hai<br>• Sugary drinks/energy drinks daily nahi — crash + anxiety<br><br>Agar lagta hai deficiency (thakan, palour, baal jhadna) — self-dose karne ke bajaye <b>CBC/thyroid test</b> karao, doctor se dekhao.",
+  a:"<b>A budget diet that works:</b><br><br>• <b>Protein daily:</b> dal, chana, rajma, eggs, soya, curd — all affordable<br>• <b>Thali rule:</b> half plate vegetables + fruit, quarter roti/rice, quarter dal/protein<br>• <b>Iron</b> (esp. women): spinach, chickpeas, dates — take with vitamin C (lemon) for better absorption<br>• <b>Don't skip breakfast</b> — concentration drops<br>• Not daily sugary/energy drinks — crash + anxiety<br><br>If you suspect a deficiency (fatigue, pallor, hair fall) — get a <b>CBC/thyroid test</b> instead of self-dosing, and see a doctor.",
   src:"ICMR-NIN Dietary Guidelines, India"},
  {t:'Eye strain from screens', who:'students', tags:['eye','aankh','screen','vision','dry','strain','laptop','mobile'],
-  a:"<b>Digital eye strain relief:</b><br><br>• <b>20-20-20 rule:</b> har 20 min pe, 20 feet door, 20 second dekho<br>• Screen 50-70 cm door, thoda neeche eye level se<br>• Consciously blink karo — dry eyes kam honge; zaroorat ho to lubricating drops<br>• Room lighting: screen se bright nahi<br><br>Blurred vision ya headache persistent ho to eye checkup (refractive error ho sakta hai).",
+  a:"<b>Digital eye strain relief:</b><br><br>• <b>20-20-20 rule:</b> every 20 minutes, look 20 feet away for 20 seconds<br>• Screen 50-70 cm away, slightly below eye level<br>• Blink consciously — fewer dry eyes; lubricating drops if needed<br>• Room lighting: not brighter than the screen<br><br>If blurred vision or headaches persist, get an eye checkup (could be refractive error).",
   src:"American Academy of Ophthalmology"},
  {t:'Caffeine — safe limits', who:'students', tags:['caffeine','coffee','energy drink','chai','chhutki','nasha'],
-  a:"<b>Caffeine limits (healthy adults):</b><br><br>• Max <b>400 mg/day</b> (~3-4 cups coffee, ya 5-6 cups chai)<br>• Teenagers: kam — 100 mg/day se zyada nahi recommended<br>• <b>Energy drinks:</b> caffeine + sugar combo — anxiety, palpitations, neend kharab<br>• Overdose signs: jitters, dil tez dhadakna, anxiety, haath kaanpna<br><br>Dependency real hai — rokoge to 2-4 din headache (withdrawal) — dheere-dheere kam karo.",
+  a:"<b>Caffeine limits (healthy adults):</b><br><br>• Max <b>400 mg/day</b> (~3-4 cups coffee, or 5-6 cups tea)<br>• Teenagers: less — no more than 100 mg/day recommended<br>• <b>Energy drinks:</b> caffeine + sugar combo — anxiety, palpitations, poor sleep<br>• Overdose signs: jitters, racing heart, anxiety, shaky hands<br><br>Dependency is real — quitting causes 2-4 days of withdrawal headaches — reduce gradually.",
   src:"US FDA caffeine guidance"},
  {t:'Mental health — when to seek help', who:'students', tags:['depression','mental','udaas','mood','anxiety disorder','suicide','self harm','akela','hopeless','tension'],
-  a:"<b>Ye signs 2+ hafte se hain to help lena zaroori hai:</b><br><br>• Roz ka mood udas/khaali, kuch mein interest nahi<br>• Neend ya bhookh badal gayi (zyada/kam)<br>• Padhai/concentration mein girawat<br>• Hopelessness, ya khud ko dosh dena<br><br><b>Khud ko nuksan pahunchane ke thoughts — turant baat karo:</b><br>• <b>Tele-MANAS: 14416</b> — free, 24/7, 20+ languages (Govt of India)<br>• <b>KIRAN: 1800-599-0019</b><br>• Aas paas kisi bharosemand insaan ko batao — counsellor/teacher/parent<br><br>Mental health problem hone mein sharam ki baat nahi — diabetes ki tarah treatable hai.",
+  a:"<b>If these signs last 2+ weeks, seeking help is necessary:</b><br><br>• Daily low/empty mood, loss of interest in things<br>• Sleep or appetite changed (more/less)<br>• Falling grades/concentration<br>• Hopelessness, or self-blame<br><br><b>Thoughts of harming yourself — talk to someone now:</b><br>• <b>Tele-MANAS: 14416</b> — free, 24/7, 20+ languages (Govt of India)<br>• <b>KIRAN: 1800-599-0019</b><br>• Tell someone you trust — counsellor/teacher/parent<br><br>Having a mental health problem is nothing to be ashamed of — like diabetes, it's treatable.",
   src:"Tele-MANAS (MoHFW); KIRAN Helpline (Govt of India)"},
  {t:'Smoking & vaping — quitting', who:'students', tags:['smoking','cigarette','vape','tambaku','hookah','quit'],
-  a:"<b>Quit karne ke fayde timeline:</b><br><br>• 20 min: heart rate normal | 12 hours: CO normal | 2-12 hafte: circulation better | 1 saal: heart disease risk aadha<br>• Vaping 'safe' nahi — nicotine addiction + lung irritation<br><br><b>Kaise chhodo:</b> quit date fix karo, triggers (doston ke saath smoke breaks) replace karo, 2 hafte sabse mushkil — uske baad easier, craving peaks 3-5 min tak hoti hai — paani piyo/walk karo",
+  a:"<b>Benefits of quitting — timeline:</b><br><br>• 20 min: heart rate normal | 12 hours: CO normal | 2-12 weeks: better circulation | 1 year: heart disease risk halved<br>• Vaping is not 'safe' — nicotine addiction + lung irritation<br><br><b>How to quit:</b> set a quit date, replace triggers (smoke breaks with friends), the first 2 weeks are the hardest — it gets easier; craving peaks last 3-5 min — drink water/go for a walk",
   src:"WHO tobacco quitting; US CDC"},
  {t:'Menstrual health basics', who:'students', tags:['period','menstrual','mahwari','cramps','pcod','pcos','periods'],
-  a:"<b>Period pain management:</b><br><br>• Garam pani ki bottle, light exercise/yoga asaan karta hai<br>• Paracetamol/ibuprofen label ke hisaab se — pehle din lena zyada effective<br>• Track karo (app/diary) — pattern samajh aayega<br><br><b>Doctor se milo agar:</b>• Dard itna ki school/college miss ho• Har 2 ghante se zyada pad change (heavy bleeding)• 3 mahine se miss ho raha hai (pregnancy nahi hai to) — PCOS/thyroid check karwao",
+  a:"<b>Period pain management:</b><br><br>• A hot water bottle and light exercise/yoga help<br>• Paracetamol/ibuprofen as per the label — taking it on day one is more effective<br>• Track your cycle (app/diary) — patterns become clear<br><br><b>See a doctor if:</b>• Pain makes you miss school/college• Pad change needed more often than every 2 hours (heavy bleeding)• Periods missed for 3 months (if not pregnant) — get checked for PCOS/thyroid",
   src:"WHO adolescent health resources"},
  {t:'Hostel & shared living hygiene', who:'students', tags:['hostel','hygiene','infection','roommate','shared','fever friend'],
-  a:"<b>Shared spaces mein infections rokne ke rules:</b><br><br>• Haath dhona — khane se pehle, bathroom ke baad (20 sec soap)<br>• Towels, razors, bottles share mat karo<br>• Koi bimaar hai to uske utensils alag<br>• Kamre mein roz thodi hawa (ventilation) — airborne infections kam<br>• Flu season se pehle vaccination socho<br><br>Outbreak (chickenpox, typhoid, jaundice) hostel mein — authorities ko batao, chhupana spread badhata hai.",
+  a:"<b>Rules to prevent infections in shared spaces:</b><br><br>• Wash hands — before eating, after the bathroom (20 sec with soap)<br>• Don't share towels, razors, bottles<br>• If someone is ill, keep their utensils separate<br>• Air the room daily (ventilation) — fewer airborne infections<br>• Consider flu vaccination before flu season<br><br>If there's an outbreak (chickenpox, typhoid, jaundice) in the hostel — inform the authorities; hiding it only spreads it.",
   src:"WHO infection prevention; US CDC"},
 
  // ============ HEALTHCARE WORKERS ============
  {t:'Hand hygiene — WHO 5 moments', who:'hcw', tags:['hand','hygiene','handwash','sanitizer','5 moments','haath dhona'],
-  a:"<b>WHO ke 5 Moments of Hand Hygiene:</b><br><br>1. Patient se <b>contact se pehle</b><br>2. Kisi bhi <b>aseptic procedure se pehle</b><br>3. <b>Body fluid exposure ke baad</b> (turant)<br>4. <b>Patient ke baad</b><br>5. <b>Patient ke surroundings ke baad</b><br><br><b>Method:</b> soap + water 40-60 sec | alcohol rub 20-30 sec<br>Nails chote, artificial nails/bangles avoid (guidelines).",
+  a:"<b>WHO's 5 Moments of Hand Hygiene:</b><br><br>1. <b>Before patient contact</b><br>2. <b>Before any aseptic procedure</b><br>3. <b>After body fluid exposure</b> (immediately)<br>4. <b>After the patient</b><br>5. <b>After patient surroundings</b><br><br><b>Method:</b> soap + water 40-60 sec | alcohol rub 20-30 sec<br>Short nails, avoid artificial nails/bangles (guidelines).",
   src:"WHO Hand Hygiene Guidelines"},
  {t:'PPE — donning & doffing order', who:'hcw', tags:['ppe','gown','gloves','n95','mask','donning','doffing','kit pehnna'],
-  a:"<b>Donning (pehnne ka order):</b><br>1. Gown → 2. Mask/N95 (fit-check karo — seal hona chahiye) → 3. Goggles/face shield → 4. Gloves<br><br><b>Doffing (utaarne ka order):</b><br>1. Gloves → 2. Gown → 3. Eye protection → 4. Mask<br><br>• Doffing mein contamination sabse zyada hota hai — slow, deliberate movements<br>• N95 fit-test hospital policy ke hisab se periodic hona chahiye",
+  a:"<b>Donning (order of putting on):</b><br>1. Gown → 2. Mask/N95 (fit-check — it should seal) → 3. Goggles/face shield → 4. Gloves<br><br><b>Doffing (order of taking off):</b><br>1. Gloves → 2. Gown → 3. Eye protection → 4. Mask<br><br>• Most contamination happens during doffing — slow, deliberate movements<br>• N95 fit-tests should be periodic per hospital policy",
   src:"US CDC PPE guidance"},
  {t:'Needle-stick injury — immediate steps', who:'hcw', tags:['needlestick','needle','prick','injury','chubh','sharp','pep','hiv exposure'],
-  a:"<b>Needle-stick pe FORAN:</b><br><br>1. Site ko <b>soap + paani se dho</b> — 15 min tak flow ke neeche<br>2. <b>Squeeze mat karo</b> (blood ko dabna/nikalna — evidence khud ke against hai)<br>3. Wound pe antiseptic + dressing<br>4. <b>TURANT report karo</b> — infection control / supervisor ko<br>5. <b>PEP (post-exposure prophylaxis) assessment ASAP</b> — ideally <b>2 ghante ke andar</b>, max 72 ghante<br>6. Source patient ki testing protocol follow karo (HIV/HBV/HCV)<br><br>Der mat karo — PEP early = HIV prevention effective.",
+  a:"<b>Needle-stick — IMMEDIATELY:</b><br><br>1. <b>Wash the site with soap + running water</b> — for 15 minutes<br>2. <b>Do NOT squeeze</b> the wound (pressing/letting blood out — evidence is against it)<br>3. Antiseptic + dressing on the wound<br>4. <b>Report IMMEDIATELY</b> — to infection control / your supervisor<br>5. <b>PEP (post-exposure prophylaxis) assessment ASAP</b> — ideally <b>within 2 hours</b>, max 72 hours<br>6. Follow the source patient testing protocol (HIV/HBV/HCV)<br><br>Don't delay — early PEP = effective HIV prevention.",
   src:"WHO/CDC post-exposure prophylaxis guidelines"},
  {t:'Healthcare worker burnout', who:'hcw', tags:['burnout','thakan','exhausted','thak gaya','motivation','cynical','stress work','overworked'],
-  a:"<b>Burnout (WHO ICD-11 mein recognized occupational phenomenon) — 3 signs:</b><br><br>1. <b>Exhaustion:</b> rest ke baad bhi khatam energy<br>2. <b>Cynicism/detachment:</b> patients se ya kaam se mental doori<br>3. <b>Reduced efficacy:</b> 'kuch nahi hota mera' feeling<br><br><b>Kya karein:</b>• Ye weakness nahi — seek help (counsellor/peer support)• Kaam ki boundaries — off-duty mein sach mein off• Shift ke beech micro-breaks• Sleep aur khana burnout ke ilaaj ki buniyaad hain<br><br>Chronic burnout clinical errors badhata hai — patient safety ka sawal bhi hai.",
+  a:"<b>Burnout (recognised as an occupational phenomenon in WHO ICD-11) — 3 signs:</b><br><br>1. <b>Exhaustion:</b> energy gone even after rest<br>2. <b>Cynicism/detachment:</b> mental distance from patients or work<br>3. <b>Reduced efficacy:</b> the 'nothing I do matters' feeling<br><br><b>What to do:</b>• It's not weakness — seek help (counsellor/peer support)• Work boundaries — truly off when off-duty• Micro-breaks during shifts• Sleep and food are the foundation of recovery<br><br>Chronic burnout increases clinical errors — it's a patient safety issue too.",
   src:"WHO ICD-11; WHO mental health at work"},
  {t:'Night shift health protocol', who:'hcw', tags:['night','shift','night duty','duty','rotation','sona nahi','circadian'],
-  a:"<b>Night shifts zyada mushkil kyun:</b> body ka clock (circadian rhythm) kharaab hota hai — digestion, mood, immunity sab affect.<br><br><b>Damage control (evidence-based):</b><br>• Shift se pehle 20-30 min nap<br>• Shift ke start mein bright light, end mein dim<br>• Caffeine shift ke <b>pehle aadhe</b> mein — aakhri ghante avoid<br>• Shift ke baad: dark room, phone silent, blackout curtains — 7 hours protected neend<br>• <b>Drive back:</b> 20+ hours jaag ke drive = alcohol jaisa impaired — cab/colleague lo",
+  a:"<b>Why night shifts are harder:</b> the body's clock (circadian rhythm) is disrupted — digestion, mood and immunity are all affected.<br><br><b>Damage control (evidence-based):</b><br>• 20-30 min nap before the shift<br>• Bright light at the start of the shift, dim at the end<br>• Caffeine in the <b>first half</b> of the shift — avoid the last hour<br>• After the shift: dark room, phone silent, blackout curtains — 7 hours of protected sleep<br>• <b>Driving back:</b> driving after 20+ hours awake = impairment like alcohol — take a cab/colleague's help",
   src:"US NIOSH shift work guidance"},
  {t:'Back safety & patient lifting', who:'hcw', tags:['back','pain','lifting','posture','kamar','bedside','carry patient'],
-  a:"<b>Patient lifting / long standing ke liye back safety:</b><br><br>• <b>Legs se uthao, kamar se nahi</b> — knees bend, load body ke paas<br>• Heavy patient = <b>team lift</b> ya lifting aid — akele try karna spine ka setup hai<br>• Bed height adjust karo (hip level ke aas paas)<br>• Long standing: ek pair stool pe rakho baari-baari, posture change<br><br>3+ hafte ka back pain / leg tak jata dard (sciatica signs) → physio/ortho.",
+  a:"<b>Back safety for patient lifting / long standing:</b><br><br>• <b>Lift with the legs, not the back</b> — knees bent, load close to the body<br>• Heavy patient = <b>team lift</b> or a lifting aid — lifting alone is a spine injury waiting to happen<br>• Adjust bed height (around hip level)<br>• Long standing: rest one foot on a stool alternately, change posture<br><br>3+ weeks of back pain / pain radiating to the leg (sciatica signs) → physio/ortho.",
   src:"US NIOSH lifting guidance"},
  {t:'HCW vaccinations to stay updated', who:'hcw', tags:['vaccination','vaccine','hepatitis','immunization','tif','ti'],
-  a:"<b>Healthcare workers ke liye essential vaccines (hospital policy se confirm karo):</b><br><br>• <b>Hepatitis B</b> — 3-dose series + anti-HBs titer 1-2 mahine baad (10+ mIU/mL = protected)<br>• <b>Influenza</b> — yearly<br>• <b>COVID-19</b> — current national guidelines ke hisaab se<br>• Tetanus booster (10 saal)<br>• Exposure-prone role ho to — MMR, varicella status bhi check<br><br>Occupational health department se apna record verify karwao.",
+  a:"<b>Essential vaccines for healthcare workers (confirm with hospital policy):</b><br><br>• <b>Hepatitis B</b> — 3-dose series + anti-HBs titer 1-2 months later (10+ mIU/mL = protected)<br>• <b>Influenza</b> — yearly<br>• <b>COVID-19</b> — as per current national guidelines<br>• Tetanus booster (every 10 years)<br>• If in an exposure-prone role — also check MMR, varicella status<br><br>Verify your record with the occupational health department.",
   src:"WHO immunization of health workers; US CDC"},
  {t:'Biomedical waste segregation', who:'hcw', tags:['biomedical','waste','bmw','segregation','kachra','yellow bag','sharps'],
-  a:"<b>BMW Rules (India) — source pe hi segregation:</b><br><br>• <b>Yellow bag:</b> infectious waste — dressings, catheters, soiled items<br>• <b>Red:</b> contaminated recyclable — IV lines, syringes (needle hata ke)<br>• <b>White/transparent puncture-proof:</b> <b>sharps</b> — needles, blades, lancets<br>• <b>Blue:</b> glass ampoules, broken vials<br>• <b>Needle recap MAT karo</b> — straight sharps container mein<br><br>Colour coding bags se pehle koi bhi 3-sec ka rule — 80% infections rokti hai.",
+  a:"<b>BMW Rules (India) — segregate at source:</b><br><br>• <b>Yellow bag:</b> infectious waste — dressings, catheters, soiled items<br>• <b>Red:</b> contaminated recyclables — IV lines, syringes (needle removed)<br>• <b>White/transparent puncture-proof:</b> <b>sharps</b> — needles, blades, lancets<br>• <b>Blue:</b> glass ampoules, broken vials<br>• <b>Never recap needles</b> — straight into the sharps container<br><br>Colour-coded segregation takes just 3 seconds and prevents most infection risks.",
   src:"Biomedical Waste Management Rules 2016 (CPCB, India)"},
 
  // ============ EVERYONE ============
  {t:'Antibiotics — why full course', who:'all', tags:['antibiotic','course','amoxi','azee','tablet khud','self medication','dawai khud'],
-  a:"<b>Antibiotics ka discipline (WHO ka AMR warning):</b><br><br>• <b>Khud se antibiotics mat lo</b> — chemist se bina prescription lena illegal bhi hai aur risky bhi<br>• Doctor ne diye to <b>course poora</b> karo — beech mein chhodna resistance banata hai<br>• Viral infections (zukaam, most fevers, sore throat) pe antibiotics kaam nahi karte<br>• Bacha hua antibiotic ghar pe rakho mat — expiry + misuse dono problem<br><br><b>AMR (antimicrobial resistance)</b> — aa raha hai superbugs — India mein sabse bhi causes mein self-medication hai.",
+  a:"<b>Antibiotic discipline (WHO's AMR warning):</b><br><br>• <b>Don't self-medicate with antibiotics</b> — getting them without a prescription is both illegal and risky<br>• If a doctor prescribed them, <b>complete the course</b> — stopping midway builds resistance<br>• Antibiotics don't work on viral infections (common cold, most fevers, sore throat)<br>• Don't keep leftover antibiotics at home — expiry + misuse, both are problems<br><br><b>AMR (antimicrobial resistance)</b> — superbugs are coming — self-medication is one of India's biggest causes.",
   src:"WHO Antimicrobial Resistance"},
  {t:'Emergency warning signs', who:'all', tags:['emergency','112','hospital','ambulance','danger','serious'],
-  a:"<b>Ye signs = turant hospital / 112:</b><br><br>• <b>Chest pain</b> + pasina / haath mein dard<br>• <b>Stroke — FAST:</b> Face bigadna, Arm kamzori, Speech unclear, Time — har minute brain<br>• Saans lene mein dikkat (rest pe bhi)<br>• Behosh / seizure jo ruk nahi raha<br>• Zyada khoon behna<br>• Snake/scorpion bite<br><br><b>112</b> (India emergency) — ambulance + police + fire. Medical helpline: <b>104</b>.",
+  a:"<b>These signs = hospital / 112 NOW:</b><br><br>• <b>Chest pain</b> + sweating / arm pain<br>• <b>Stroke — FAST:</b> Face drooping, Arm weakness, Speech unclear, Time — every minute costs brain<br>• Breathing difficulty (even at rest)<br>• Unconsciousness / seizure that won't stop<br>• Heavy bleeding<br>• Snake/scorpion bite<br><br><b>112</b> (India emergency) — ambulance + police + fire. Medical helpline: <b>104</b>.",
   src:"National Emergency Number 112 (Govt of India)"},
  {t:'Burns first aid', who:'all', tags:['burn','jala','scald','garam','burner','acid','first aid burn'],
-  a:"<b>Jalne pe first 10 min sabse important:</b><br><br>1. <b>Thanda behta paani 10-20 min</b> — baraf NAHI (frostbite + zyada damage)<br>2. <b>Toothpaste, ghee, cream MAT lagao</b> — infection + heat trap<br>3. Saaf kapde se loosely cover<br>4. Blister toote mat — natural dressing hai<br><br><b>Hospital jao agar:</b> face/hands/genitals/joints ka burn, bada area, ya child/buzurg. Chemical burn = 20+ min paani.",
+  a:"<b>The first 10 minutes matter most after a burn:</b><br><br>1. <b>Cool running water 10-20 min</b> — NOT ice (frostbite + more damage)<br>2. <b>Do NOT apply toothpaste, ghee or creams</b> — infection + trapped heat<br>3. Cover loosely with clean cloth<br>4. Don't burst blisters — they're a natural dressing<br><br><b>Go to hospital if:</b> burn on face/hands/genitals/joints, large area, or a child/elderly. Chemical burn = 20+ min of water.",
   src:"WHO Burns fact sheet"},
  {t:'Cuts & bleeding first aid', who:'all', tags:['cut','chot','khoon','bleeding','laga','first aid cut','wound'],
-  a:"<b>Katne/chot pe:</b><br><br>1. Haath dhono pehle<br>2. <b>Seedha pressure</b> saaf kapde/cotton se 10 min — dekhte raho, jaldi mat karo<br>3. Body part heart se upar rakho<br>4. 10 min baad bhi ruk nahi raha / spray ho raha hai = hospital<br><br>Deep cut (gap dikhta hai), naak/munh se lagatar khoon, ya tetanus vaccination 5+ saal purana — doctor. Rust se kata ho to tetanus zaroor socho.",
+  a:"<b>For cuts and wounds:</b><br><br>1. Wash your hands first<br>2. <b>Direct pressure</b> with clean cloth/cotton for 10 min — keep watching, don't rush<br>3. Keep the injured part raised above heart level<br>4. If it still doesn't stop after 10 min / it's spurting = hospital<br><br>Deep cut (a gap is visible), continuous bleeding from nose/mouth, or a tetanus vaccination 5+ years old — see a doctor. If the cut was caused by something rusty, definitely consider tetanus.",
   src:"Red Cross first aid guidance"},
  {t:'Dehydration & ORS', who:'all', tags:['dehydration','ors','pani','loose motion','diarrhea','dast','pet'],
-  a:"<b>Dehydration/loose motions pe:</b><br><br>• <b>ORS hi standard hai</b> — packet ko 1 litre paani mein, pack ke instructions se<br>• Ghut-ghut kar rozana jitna paai plus ORS<br>• Coconut paani/nimbu-paani + namak cheeni ka desi ORS bhi kaam karta hai jab packet na ho<br>• Khaate raho — khali pet mat raho<br><br><b>Hospital agar:</b> peshaab band, bachche ki nappy 6+ ghante se khaali, behosh feel, khoon aa raha, bukhar saath",
+  a:"<b>For dehydration/loose motions:</b><br><br>• <b>ORS is the standard</b> — dissolve the packet in 1 litre of water, per the pack's instructions<br>• Sip water continuously through the day, plus ORS<br>• Coconut water/lemon water with salt and sugar is a workable home alternative when a packet isn't available<br>• Keep eating — don't stay on an empty stomach<br><br><b>Hospital if:</b> no urination, a child's nappy dry for 6+ hours, feeling faint, blood in stool, or accompanying fever",
   src:"WHO ORS formulation guidance"},
  {t:'Anaemia — fatigue in young people', who:'all', tags:['anemia','anaemia','khoon ki kami','thakan','weak','pale','iron'],
-  a:"<b>Symptoms:</b> thakan, chamki, chakkar, saans phoolna, pallor (aankh ke andar/nakhun dekho)<br><br>• India mein young women/men mein bahut common (iron deficiency)<br>• <b>Khud iron tablets mat shuru karo</b> — pehle <b>CBC test</b> karao; reason pata karna zaroori (diet? loss? absorption?)<br>• Diet: har roz palak/chana/dates/beef... vegetarian ho to vitamin C (nimbu) ke saath iron absorption double<br>• Aur bhi — jaundice-type yellow eye, ya kaale stool ke saath — turant check",
+  a:"<b>Symptoms:</b> fatigue, breathlessness, palpitations on exertion, pallor (check the inner eyelids/nails)<br><br>• Very common in young Indian women/men (iron deficiency)<br>• <b>Don't start iron tablets on your own</b> — first get a <b>CBC test</b>; finding the reason matters (diet? blood loss? absorption?)<br>• Diet: daily spinach/chickpeas/dates; meat is iron-rich — vegetarians should pair iron with vitamin C (lemon) to double absorption<br>• Also — jaundice-like yellow eyes, or black stools — get checked immediately",
   src:"WHO anaemia guidance"},
  {t:'Physical activity — weekly targets', who:'all', tags:['exercise','gym','activity','walking','yoga','fit','physical'],
-  a:"<b>WHO recommendation (18-64 saal):</b><br><br>• <b>150-300 min/week</b> medium exercise (tez walk, cycling) YA<br>• <b>75-150 min/week</b> intense (running, HIIT)<br>• <b>2 din/week strength training</b> bhi<br><br><b>Beginner jeet:</b> roz 30 min walk = 210 min/week — done! Baith ke kaam wale har ghante 3-5 min uth ke chal aao.",
+  a:"<b>WHO recommendation (ages 18-64):</b><br><br>• <b>150-300 min/week</b> moderate exercise (brisk walk, cycling) OR<br>• <b>75-150 min/week</b> vigorous (running, HIIT)<br>• Plus <b>2 days/week strength training</b><br><br><b>Beginner win:</b> a 30 min daily walk = 210 min/week — done! If you sit at work, get up and walk 3-5 min every hour.",
   src:"WHO Physical Activity Guidelines"}
 ];
 
@@ -1120,7 +1220,7 @@ let chatStarted=false;
 function toggleChat(){
   const p=document.getElementById('chatPanel');
   p.classList.toggle('open');
-  if(p.classList.contains('open')&&!chatStarted){chatStarted=true;botSay(HELLO+" Ask me anything about wellness — symptoms, student wellness, healthcare-worker topics (hand hygiene, PPE, needle-stick), medicines safety. Answers verified sources ke saath milte hain. What would you like to know?",CHIPS_DEFAULT);}
+  if(p.classList.contains('open')&&!chatStarted){chatStarted=true;botSay(HELLO+" Ask me anything about wellness — symptoms, student wellness, healthcare-worker topics (hand hygiene, PPE, needle-stick), medicines safety. Answers come with verified sources. What would you like to know?",CHIPS_DEFAULT);}
   if(p.classList.contains('open'))document.getElementById('chatInput').focus();
 }
 function openChat(prefill){
@@ -1170,13 +1270,13 @@ function botReply(q){
 
   // Greeting
   if(has('hi','hello','hey','namaste','namaskar')&&q.length<25){
-    botSay(HELLO+" Ask me anything about wellness — symptoms, student wellness, healthcare-worker topics (hand hygiene, PPE, needle-stick), medicines safety. Answers verified sources ke saath milte hain. What would you like to know?",CHIPS_DEFAULT);
+    botSay(HELLO+" Ask me anything about wellness — symptoms, student wellness, healthcare-worker topics (hand hygiene, PPE, needle-stick), medicines safety. Answers come with verified sources. What would you like to know?",CHIPS_DEFAULT);
     return;
   }
 
   // Platform intents (booking / products / orders / pricing / returns / records)
   if(has('book','consult','appointment','teleconsult')){
-    botSay("Teleconsultations on aneev are <b>coming soon</b> — abhi available nahi hain.<br><br>Tab tak: (1) main symptoms aur wellness questions ka jawab de sakta hoon, (2) partner stores (Practo, Apollo 24|7, Tata 1mg) se consultation book kar sakte ho — Partners section mein links hain.<br><br>Launch hone pe yahin slot booking milegi.",['What should I prepare?']);
+    botSay("Teleconsultations on aneev are <b>coming soon</b> — not available yet.<br><br>Until then: (1) I can answer symptom and wellness questions, (2) you can book consultations through partner stores (Practo, Apollo 24|7, Tata 1mg) — links are in the Partners section.<br><br>Once launched, slot booking will be right here.",['What should I prepare?']);
     return;
   }
   if(has('prepare')){
@@ -1184,25 +1284,29 @@ function botReply(q){
     return;
   }
   if(has('track','order status','where is my order','delivery','shipped')){
-    botSay("Order tracking <b>abhi available nahi</b> — ye ek demo shop hai, koi asli order nahi hota. Real store aane par order tracking yahan milega.",CHIPS_DEFAULT);
+    botSay("Order tracking <b>is not available yet</b> — this is a demo shop, no real orders are placed. Order tracking will be here once the real store launches.",CHIPS_DEFAULT);
     return;
   }
   if(has('free','price','pricing','subscription','charge','budget')){
-    botSay("aneev's honest pricing:<br><br>• <b>AI Wellness Assistant</b> — completely free, unlimited (live now)<br>• <b>Wellness records & medicine reminders</b> — coming soon<br>• <b>Teleconsultations</b> — coming soon<br>• <b>Wellness shop</b> — abhi demo hai, koi asli payment nahi<br><br>Jab real services launch hongi, pricing yahan transparent milegi.",CHIPS_DEFAULT);
+    botSay("aneev's honest pricing:<br><br>• <b>AI Wellness Assistant</b> — completely free, unlimited (live now)<br>• <b>Wellness records & medicine reminders</b> — coming soon<br>• <b>Teleconsultations</b> — coming soon<br>• <b>Wellness shop</b> — currently a demo, no real payments<br><br>When real services launch, pricing will be listed here transparently.",CHIPS_DEFAULT);
     return;
   }
   if(has('return','refund','exchange','cancel')){
-    botSay("Returns ki baat abhi apply nahi hoti — <b>demo shop</b> hai, koi asli order ya payment nahi hota. Real store aane par returns policy yahan clearly likhi jayegi.",CHIPS_DEFAULT);
+    botSay("Returns don't apply yet — this is a <b>demo shop</b>, no real orders or payments are made. Once the real store launches, the returns policy will be clearly written here.",CHIPS_DEFAULT);
     return;
   }
   if(has('record','privacy','data','secure','history')){
-    botSay("Your <b>wellness data on aneev</b>:<br><br>• Private — chat aur cart data sirf tumhare browser mein rehta hai, kisi server pe nahi jaata<br>• We never sell wellness data<br>• Records/reports timeline — coming soon<br><br>No signup, no account — kuch bhi collect nahi hota.",CHIPS_DEFAULT);
+    botSay("Your <b>wellness data on aneev</b>:<br><br>• Private — chat and cart data stays only in your browser, never sent to any server<br>• We never sell wellness data<br>• Records/reports timeline — coming soon<br><br>No signup, no account — nothing is collected.",CHIPS_DEFAULT);
+    return;
+  }
+  if(has('chemist','pharmacy','medical store','medical shop','dukaan','listing','directory','near')){
+    botSay("aneev's <b>Medical Shops Directory</b> — medical shops in your area, in one place (name, timings, phone, services).<br><br>⚠️ This is currently <b>sample/demo data</b> — real listings are coming with owner consent. Until then, it's a demo.<br><br>Are you a shop owner, or want a shop listed? Just let us know!",CHIPS_DEFAULT);
     return;
   }
   if(has('product','shop','buy','show me','medicine','tablet','sanitizer','mask','vitamin','protein','price','cost')){
     const cat=has('device','monitor','oximeter','thermometer')?'devices':has('medicine','tablet','ors')?'medicines':has('wellness','vitamin','protein')?'wellness':has('care','mask','sanitizer','cream')?'care':null;
     let list=cat?PRODUCTS.filter(p=>p.cat===cat):PRODUCTS.slice(0,3);
-    botSay("Here's a selection from the aneev demo shop (asli sale coming soon):<br><br>"+list.slice(0,4).map(p=>`• <b>${p.name}</b> — ${inr(p.price)}<br>${p.desc}`).join('<br><br>')+"<br><br>Full range in the Shop section — demo cart try kar sakte ho.",CHIPS_DEFAULT);
+    botSay("Here's a selection from the aneev demo shop (real sale coming soon):<br><br>"+list.slice(0,4).map(p=>`• <b>${p.name}</b> — ${inr(p.price)}<br>${p.desc}`).join('<br><br>')+"<br><br>Full range in the Shop section — try the demo cart.",CHIPS_DEFAULT);
     return;
   }
 
@@ -1220,11 +1324,11 @@ function botReply(q){
     return;
   }
   if(has('child','kid','baby','bachcha','infant')){
-    botSay("<b>Children</b> — cautious approach:<br><br>• Mild fever: fluids, rest, paracetamol syrup per weight-based label dose<br>• Watch activity — a playful child is usually reassuring<br><br><b>Consult a physician promptly if:</b> under 3 months with any fever, refuses feeds, unusually sleepy, rapid breathing, dehydration signs (fewer wet nappies).<br><br>Paediatric teleconsultation coming soon — tab tak Partners section ke stores (Practo, Apollo 24|7) se book kar sakte ho.",['Book a consultation','Emergency warning signs']);
+    botSay("<b>Children</b> — cautious approach:<br><br>• Mild fever: fluids, rest, paracetamol syrup per weight-based label dose<br>• Watch activity — a playful child is usually reassuring<br><br><b>Consult a physician promptly if:</b> under 3 months with any fever, refuses feeds, unusually sleepy, rapid breathing, dehydration signs (fewer wet nappies).<br><br>Paediatric teleconsultation coming soon — until then you can book through the stores in the Partners section (Practo, Apollo 24|7).",['Book a consultation','Emergency warning signs']);
     return;
   }
   if(has('diabetes','sugar','bp','blood pressure','hypertension')){
-    botSay("<b>Diabetes and blood pressure</b> — daily monitoring matters most:<br><br>• Check BP/sugar at the same time daily and log readings<br>• Never stop or change medicines without your physician's advice<br>• Medicine reminders aur refill nudges — aneev pe coming soon<br><br>Demo shop mein glucometer kit (₹1,249) aur BP monitor (₹1,899) listed hain — asli sale coming soon. Details chahiye?",['Show BP monitor','Show glucometer']);
+    botSay("<b>Diabetes and blood pressure</b> — daily monitoring matters most:<br><br>• Check BP/sugar at the same time daily and log readings<br>• Never stop or change medicines without your physician's advice<br>• Medicine reminders and refill nudges — coming soon on aneev<br><br>The demo shop lists a glucometer kit (₹1,249) and BP monitor (₹1,899) — real sale coming soon. Want details?",['Show BP monitor','Show glucometer']);
     return;
   }
 
@@ -1241,7 +1345,7 @@ function botReply(q){
   }
 
   // Fallback — show what the KB covers
-  botSay("Main verified topics pe madad kar sakta hoon — try karo:<br><br>• <b>Students:</b> exam stress, sleep, diet, eye strain, mental health, smoking<br>• <b>Healthcare workers:</b> hand hygiene, PPE order, needle-stick injury, burnout, night shifts, BMW waste<br>• <b>Sabke liye:</b> fever, antibiotics, burns, cuts, dehydration, anaemia, emergency signs<br><br>Type your question:",CHIPS_DEFAULT);
+  botSay("I can help with verified topics — try these:<br><br>• <b>Students:</b> exam stress, sleep, diet, eye strain, mental health, smoking<br>• <b>Healthcare workers:</b> hand hygiene, PPE order, needle-stick injury, burnout, night shifts, BMW waste<br>• <b>Everyone:</b> fever, antibiotics, burns, cuts, dehydration, anaemia, emergency signs<br><br>Type your question:",CHIPS_DEFAULT);
 }
 
 /* ================================================================
